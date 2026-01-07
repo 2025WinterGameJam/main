@@ -17,7 +17,7 @@ public class CarMove : MonoBehaviour
     {
         if (!stop)
         {
-            transform.Translate(0.0f, 0.0075f, 0.0f);
+            transform.Translate(0.0f, 0.005f, 0.0f);
         }
     }
 
