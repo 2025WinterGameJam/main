@@ -5,6 +5,7 @@ using UnityEngine;
 public class CarMove : MonoBehaviour
 {
     bool stop;
+    [SerializeField] private float speed;
 
     AudioSource Sound;
     public AudioClip Train;
@@ -22,7 +23,7 @@ public class CarMove : MonoBehaviour
     {
         if (!stop)
         {
-            transform.Translate(0.0f, 0.005f, 0.0f);
+            transform.Translate(0.0f, speed * Time.deltaTime, 0.0f);
         }
     }
 
@@ -31,10 +32,6 @@ public class CarMove : MonoBehaviour
         if (collision.gameObject.tag == "Down")
         {
             stop = true;
-            transform.Translate(0.0f, -0.05f, 0.0f);
-            Invoke("Go", 2.0f);
-
-            //collision.gameObject.SetActive(false);
         }
 
         if (collision.gameObject.tag == "Train")
@@ -50,6 +47,16 @@ public class CarMove : MonoBehaviour
             //ScoreManager.ScoreNum += 100;
             ScoreScript.instance.AddScore(100);
             Destroy(gameObject);
+        }
+    }
+
+    private void OnTriggerStay2D(Collider2D collision)
+    {
+        // とどまり続けてる時に踏み切りが上がったら再び進み始める
+        // すぐに踏み切りしめたとしても侵入してるので止まらない。
+        if (collision.gameObject.tag == "Up")
+        {
+            stop = false;
         }
     }
 

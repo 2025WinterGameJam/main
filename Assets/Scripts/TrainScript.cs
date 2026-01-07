@@ -29,10 +29,12 @@ public class TrainScript : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        Vector2 pos = gameObject.transform.position;
-        pos.x += speed * direction;
-        gameObject.transform.position = pos;
+        transform.Translate(speed * Time.deltaTime * direction, 0.0f, 0.0f);
+        //Vector2 pos = gameObject.transform.position;
+        //pos.x += speed * Time.deltaTime * direction;
+        //gameObject.transform.position = pos;
 
+        Vector2 pos = gameObject.transform.position;
         float despos = Mathf.Abs(pos.x);
         if(despos >= destroyPoint)
         {
