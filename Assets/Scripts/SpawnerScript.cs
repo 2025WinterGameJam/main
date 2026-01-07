@@ -9,7 +9,7 @@ public class SpawnerScript : MonoBehaviour
     float elaspedTime;//経過時間
 
     public int lineCount;                                   //線路の数
-    public float betweenIni = 3;                            //電車が出現する間隔(秒)
+    public float betweenIni = 8;                            //電車が出現する間隔(秒)
     public int spawnerCount;
     public GameObject [] spawnerArray = new GameObject[2];  //スポナーの配列
     public GameObject[] trainArray = new GameObject[1];     //電車の配列(Prefab的な)

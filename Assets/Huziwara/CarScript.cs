@@ -32,7 +32,7 @@ public class CarMove : MonoBehaviour
         {
             stop = true;
             transform.Translate(0.0f, -0.05f, 0.0f);
-            Invoke("Go", 3);
+            Invoke("Go", 2.0f);
 
             //collision.gameObject.SetActive(false);
         }
@@ -40,7 +40,7 @@ public class CarMove : MonoBehaviour
         if (collision.gameObject.tag == "Train")
         {
             //Sound.PlayOneShot(Train);
-            TimerScript.instance.AddTime(-10.0f);
+            TimerScript.instance.AddTime(-6.0f);
             //GaugeMove.Gauge -= 100;
             Destroy(gameObject);
         }
