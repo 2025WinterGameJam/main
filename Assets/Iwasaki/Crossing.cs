@@ -38,12 +38,14 @@ public class Crossing : MonoBehaviour
             // 閉じる時の見た目（遮断機を下ろすなど）
             spriteRenderer.sprite = closedSprite;
             Debug.Log(gameObject.name + " が閉じました");
+            tag = "Down";
         }
         else
         {
             // 開く時の見た目
             spriteRenderer.sprite = openSprite;
             Debug.Log(gameObject.name + " が開きました");
+            tag = "Up";
         }
     }
 }
