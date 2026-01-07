@@ -11,7 +11,7 @@ public class SpawnerScript : MonoBehaviour
     public int lineCount;                                   //線路の数
     public float betweenIni = 3;                            //電車が出現する間隔(秒)
     public int spawnerCount;
-    public GameObject [] spawnerArray = new GameObject[6];  //スポナーの配列
+    public GameObject [] spawnerArray = new GameObject[2];  //スポナーの配列
     public GameObject[] trainArray = new GameObject[1];     //電車の配列(Prefab的な)
 
     public struct spawnerSt
@@ -20,7 +20,7 @@ public class SpawnerScript : MonoBehaviour
         public bool used;
     }
 
-    public spawnerSt[] spStArray = new spawnerSt[6]; 
+    public spawnerSt[] spStArray = new spawnerSt[2]; 
 
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
@@ -50,6 +50,20 @@ public class SpawnerScript : MonoBehaviour
             spStArray[rPair + 1].used = true;
 
             GameObject obj = Instantiate(trainArray[0], spawn, Quaternion.identity);
+            if(r % 2 == 0)
+            {
+                // 右向き
+                Vector3 scale = obj.transform.localScale;
+                scale.x = Math.Abs(scale.x);
+                obj.transform.localScale = scale;
+            }
+            else
+            {
+                // 左向き
+                Vector3 scale = obj.transform.localScale;
+                scale.x *= -1;
+                obj.transform.localScale = scale;
+            }
 
             startTime = Time.time;
             elaspedTime = 0.0f;

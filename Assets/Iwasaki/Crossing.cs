@@ -5,6 +5,7 @@ public class Crossing : MonoBehaviour
     [Header("画像の割当て")]
     [SerializeField] private Sprite openSprite;   // 開いている時の画像
     [SerializeField] private Sprite closedSprite; // 閉まっている時の画像
+    [SerializeField] private GameObject poleObject;
 
     private SpriteRenderer spriteRenderer;
 
@@ -38,6 +39,10 @@ public class Crossing : MonoBehaviour
             // 閉じる時の見た目（遮断機を下ろすなど）
             spriteRenderer.sprite = closedSprite;
             Debug.Log(gameObject.name + " が閉じました");
+            // 子オブジェクトであるポールの角度と位置を変更
+            poleObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
+            poleObject.transform.localPosition = new Vector3(1.3f, 0.0f, 0.0f);
+            // タグ変更
             tag = "Down";
         }
         else
@@ -45,6 +50,10 @@ public class Crossing : MonoBehaviour
             // 開く時の見た目
             spriteRenderer.sprite = openSprite;
             Debug.Log(gameObject.name + " が開きました");
+            // 子オブジェクトであるポールの角度と位置を変更
+            poleObject.transform.localRotation = Quaternion.Euler(0, 0, 45);
+            poleObject.transform.localPosition = new Vector3(1.0f, 0.8f, 0.0f);
+            // タグ変更
             tag = "Up";
         }
     }

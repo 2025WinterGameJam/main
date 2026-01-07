@@ -7,6 +7,7 @@ TagManager:
   - Up
   - Down
   - Factory
+  - Train
   layers:
   - Default
   - TransparentFX
