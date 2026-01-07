@@ -17,7 +17,7 @@ public class CarMove : MonoBehaviour
     {
         if (!stop)
         {
-            transform.Translate(0.0f, 0.005f, 0.0f);
+            transform.Translate(0.0f, 0.0075f, 0.0f);
         }
     }
 
@@ -34,13 +34,15 @@ public class CarMove : MonoBehaviour
 
         if (collision.gameObject.tag == "Train")
         {
-            GaugeMove.Gauge -= 100;
+            TimerScript.instance.AddTime(-10.0f);
+            //GaugeMove.Gauge -= 100;
             Destroy(gameObject);
         }
 
         if (collision.gameObject.tag == "Factory")
         {
-            ScoreManager.ScoreNum += 100;
+            //ScoreManager.ScoreNum += 100;
+            ScoreScript.instance.AddScore(100);
             Destroy(gameObject);
         }
     }

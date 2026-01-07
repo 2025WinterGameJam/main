@@ -6,6 +6,7 @@ TagManager:
   tags:
   - Up
   - Down
+  - Factory
   layers:
   - Default
   - TransparentFX

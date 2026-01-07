@@ -7,6 +7,15 @@ public class TimerScript : MonoBehaviour
 {
     [SerializeField] private float m_Time = 0f; // タイマーカウント用
     const float START_TIME = 120f; // 開始時のタイマー時間(120s)
+    public static TimerScript instance;
+
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {
