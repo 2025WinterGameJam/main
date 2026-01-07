@@ -18,6 +18,7 @@ public class ScoreScript : MonoBehaviour
     void Start()
     {
         ResetScore();
+        DontDestroyOnLoad(this);
     }
 
 

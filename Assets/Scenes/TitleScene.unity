@@ -216,7 +216,6 @@ GameObject:
   m_Component:
   - component: {fileID: 231164858}
   - component: {fileID: 231164857}
-  - component: {fileID: 231164859}
   m_Layer: 0
   m_Name: Square
   m_TagString: Untagged
@@ -294,20 +293,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &231164859
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 231164856}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c81926b924376409f802b93dce1ebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_scrollSpeedX: 1
-  m_scrollSpeedY: 1
 --- !u!1 &379179349
 GameObject:
   m_ObjectHideFlags: 0
@@ -492,14 +477,14 @@ GameObject:
   m_Component:
   - component: {fileID: 505061853}
   - component: {fileID: 505061852}
-  - component: {fileID: 505061854}
+  - component: {fileID: 505061855}
   m_Layer: 0
   m_Name: mountain_0
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!212 &505061852
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -543,7 +528,7 @@ SpriteRenderer:
   m_LightmapParameters: {fileID: 0}
   m_SortingLayerID: 0
   m_SortingLayer: 0
-  m_SortingOrder: 2
+  m_SortingOrder: 1
   m_Sprite: {fileID: 21300000, guid: 5de562d596c0443409d278aaa80171b9, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
   m_FlipX: 0
@@ -564,13 +549,13 @@ Transform:
   m_GameObject: {fileID: 505061851}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -1.6716251, y: -0.89, z: 0}
-  m_LocalScale: {x: 0.2, y: 0.2, z: 1}
+  m_LocalPosition: {x: -1.6716251, y: -0.92, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &505061854
+--- !u!114 &505061855
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -579,11 +564,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 505061851}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c81926b924376409f802b93dce1ebe, type: 3}
+  m_Script: {fileID: 11500000, guid: 48d4547046f9cfd409b0b7e260f06994, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  m_scrollSpeedX: 0.2
-  m_scrollSpeedY: 0
+  atai: 0.0005
 --- !u!1 &519420028
 GameObject:
   m_ObjectHideFlags: 0
@@ -816,7 +800,6 @@ GameObject:
   - component: {fileID: 781667870}
   - component: {fileID: 781667873}
   - component: {fileID: 781667872}
-  - component: {fileID: 781667871}
   m_Layer: 5
   m_Name: Image
   m_TagString: Untagged
@@ -843,20 +826,6 @@ RectTransform:
   m_AnchoredPosition: {x: 12, y: -105}
   m_SizeDelta: {x: 3000, y: 585}
   m_Pivot: {x: 0.5, y: 0.5}
---- !u!114 &781667871
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 781667869}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 20c81926b924376409f802b93dce1ebe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  m_scrollSpeedX: 1
-  m_scrollSpeedY: 0
 --- !u!114 &781667872
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1073,6 +1042,7 @@ GameObject:
   - component: {fileID: 1479087588}
   - component: {fileID: 1479087587}
   - component: {fileID: 1479087586}
+  - component: {fileID: 1479087589}
   m_Layer: 5
   m_Name: Button
   m_TagString: Untagged
@@ -1143,7 +1113,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1479087587}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1479087589}
+        m_TargetAssemblyTypeName: ButtonScript, Assembly-CSharp
+        m_MethodName: OnClick
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 1
 --- !u!114 &1479087587
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1182,6 +1164,19 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1479087584}
   m_CullTransparentMesh: 1
+--- !u!114 &1479087589
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1479087584}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2041d6b02c06124438e4833ad0cc3cf7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  sceneName: GameScene_Test
 --- !u!1 &1491741136
 GameObject:
   m_ObjectHideFlags: 0
@@ -1416,6 +1411,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1553859680}
   - component: {fileID: 1553859679}
+  - component: {fileID: 1553859681}
   m_Layer: 0
   m_Name: cloud
   m_TagString: Untagged
@@ -1493,6 +1489,19 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1553859681
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1553859678}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 48d4547046f9cfd409b0b7e260f06994, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  atai: -0.001
 --- !u!1 &1868756242
 GameObject:
   m_ObjectHideFlags: 0

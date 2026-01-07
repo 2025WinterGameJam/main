@@ -1427,7 +1427,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lineCount: 3
-  betweenIni: 3
+  betweenIni: 10
   spawnerCount: 2
   spawnerArray:
   - {fileID: 262724961}
