@@ -9,11 +9,17 @@ public class Crossing : MonoBehaviour
 
     private SpriteRenderer spriteRenderer;
 
+    AudioSource sound;
+    public AudioClip crossOpenSource;
+    public AudioClip crossClosedSource;
+
     // 現在の状態（外部から読み取り専用）
     public bool IsClosed { get; private set; } = false;
 
     void Start()
     {
+        sound = GetComponent<AudioSource>();
+
         spriteRenderer = GetComponent<SpriteRenderer>();
         // 初期状態（開いている状態）をセット
         SetState(false);
@@ -44,6 +50,9 @@ public class Crossing : MonoBehaviour
             poleObject.transform.localPosition = new Vector3(1.3f, 0.0f, 0.0f);
             // タグ変更
             tag = "Down";
+
+            //オーディオ再生
+            sound.PlayOneShot(crossOpenSource);
         }
         else
         {
@@ -55,6 +64,9 @@ public class Crossing : MonoBehaviour
             poleObject.transform.localPosition = new Vector3(1.0f, 0.8f, 0.0f);
             // タグ変更
             tag = "Up";
+
+            //オーディオ再生
+            sound.PlayOneShot(crossClosedSource);
         }
     }
 }

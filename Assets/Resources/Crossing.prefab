@@ -238,3 +238,5 @@ MonoBehaviour:
   openSprite: {fileID: -2972274471448407571, guid: 7202b57d1f5e79941a780b5ad15a74b9, type: 3}
   closedSprite: {fileID: -6906252930508981219, guid: 72322efa6c09aca439e487d8003123ca, type: 3}
   poleObject: {fileID: 3158653126999387572}
+  crossOpenSource: {fileID: 8300000, guid: 3eaebcb2869ab6c4ba091f852d835b52, type: 3}
+  crossClosedSource: {fileID: 8300000, guid: 922647c437e5b8e40af310fecc3c1ecc, type: 3}
