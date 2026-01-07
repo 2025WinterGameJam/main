@@ -1,6 +1,7 @@
-using UnityEngine;
-using TMPro;
 using System;
+using TMPro;
+using UnityEngine;
+using UnityEngine.SceneManagement;
 
 [RequireComponent(typeof(TextMeshProUGUI))] // TextMeshProコンポーネント(UI用)が必要であることを明示的に指定
 public class TimerScript : MonoBehaviour
@@ -34,6 +35,7 @@ public class TimerScript : MonoBehaviour
         if(m_Time <= 0.0f)
         {
             // 終了処理
+            SceneManager.LoadScene("ResultScene");
         }
     }
     private void SetTimeText()

@@ -6,9 +6,14 @@ public class CarMove : MonoBehaviour
 {
     bool stop;
 
+    AudioSource Sound;
+    public AudioClip Train;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
+        Sound = GetComponent<AudioSource>();
         stop = false;
     }
 
@@ -34,6 +39,7 @@ public class CarMove : MonoBehaviour
 
         if (collision.gameObject.tag == "Train")
         {
+            //Sound.PlayOneShot(Train);
             TimerScript.instance.AddTime(-10.0f);
             //GaugeMove.Gauge -= 100;
             Destroy(gameObject);

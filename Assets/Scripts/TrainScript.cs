@@ -8,6 +8,10 @@ public class TrainScript : MonoBehaviour
     public float speed; //電車のスピード
     float direction;
 
+    AudioSource Sound;
+    public AudioClip Inport;
+
+
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
@@ -16,6 +20,10 @@ public class TrainScript : MonoBehaviour
         {
             direction *= -1;
         }
+
+        Sound = GetComponent<AudioSource>();
+
+        Sound.PlayOneShot(Inport);
     }
 
     // Update is called once per frame
