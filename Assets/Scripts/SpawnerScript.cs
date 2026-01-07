@@ -2,6 +2,7 @@ using NUnit.Framework;
 using UnityEngine;
 using System.Collections.Generic;
 using System;
+using System.Collections;
 
 public class SpawnerScript : MonoBehaviour
 {
@@ -13,6 +14,8 @@ public class SpawnerScript : MonoBehaviour
     public int spawnerCount;
     public GameObject [] spawnerArray = new GameObject[6];  //スポナーの配列
     public GameObject[] trainArray = new GameObject[1];     //電車の配列(Prefab的な)
+
+    public GameObject conveat;
 
     public struct spawnerSt
     {
@@ -45,14 +48,37 @@ public class SpawnerScript : MonoBehaviour
             int r = UnityEngine.Random.Range(0, spawnerCount);
 
             Vector2 spawn = spStArray[r].spawnerObj.transform.position;
-            int rPair = r / 2;
-            spStArray[rPair].used = true;
-            spStArray[rPair + 1].used = true;
+            //int rPair = r / 2;
+            //spStArray[rPair].used = true;
+            //spStArray[rPair + 1].used = true;
 
-            GameObject obj = Instantiate(trainArray[0], spawn, Quaternion.identity);
+            Vector2 spawnCon = spawn;
+            if(spawn.x < 0)
+            {
+                spawnCon.x += 8;
+            }
+            else
+            {
+                spawnCon.x -= 8;
+            }
+
+            //GameObject obj = Instantiate(trainArray[0], spawn, Quaternion.identity);
+            GameObject img = Instantiate(conveat, spawnCon, Quaternion.identity);
+            StartCoroutine(InstTrainDelay(spawn, 3f));
 
             startTime = Time.time;
             elaspedTime = 0.0f;
         }
+    }
+
+    //電車を生成する
+    public void InstTrain(Vector2 spawn)
+    {
+        GameObject obj = Instantiate(trainArray[0], spawn, Quaternion.identity);
+    }
+    IEnumerator InstTrainDelay(Vector2 spawn, float delay)
+    {
+        yield return new WaitForSeconds(delay);
+        Instantiate(trainArray[0], spawn, Quaternion.identity);
     }
 }

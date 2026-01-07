@@ -19,7 +19,7 @@ public class TrainScript : MonoBehaviour
     }
 
     // Update is called once per frame
-    void Update()
+    private void FixedUpdate()
     {
         Vector2 pos = gameObject.transform.position;
         pos.x += speed * direction;
