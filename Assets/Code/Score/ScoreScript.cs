@@ -5,6 +5,15 @@ using TMPro;
 public class ScoreScript : MonoBehaviour
 {
     [SerializeField] private int m_Score = 0;
+    public static ScoreScript instance;
+
+    void Awake()
+    {
+        if(instance == null)
+        {
+            instance = this;
+        }
+    }
 
     void Start()
     {
