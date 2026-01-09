@@ -4,8 +4,8 @@ using UnityEngine;
 
 public class TrainScript : MonoBehaviour
 {
-    public float destroyPoint;  //このx座標の絶対値を超えたらこれが付いてるオブジェクトは消え去ります。この世から。永遠に。
-    public float speed; //電車のスピード
+    public float destroyPoint;  //????x???W???Βl??????????t?????I?u?W?F?N?g????????????B?????????B?i????B
+    public float speed; //?d???X?s?[?h
     float direction;
 
     AudioSource Sound;
@@ -15,7 +15,7 @@ public class TrainScript : MonoBehaviour
     // Start is called once before the first execution of Update after the MonoBehaviour is created
     void Start()
     {
-        direction = gameObject.transform.position.x / gameObject.transform.position.x; //電車の進行方向
+        direction = gameObject.transform.position.x / gameObject.transform.position.x; //?d???i?s????
         if(gameObject.transform.position.x > 0 )
         {
             direction *= -1;

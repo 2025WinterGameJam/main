@@ -22,7 +22,7 @@ public class Crossing : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         // 初期状態（開いている状態）をセット
-        SetState(false);
+        SetState(false, false);
     }
 
     // クリックされた時のUnityイベント
@@ -36,7 +36,7 @@ public class Crossing : MonoBehaviour
     /// 状態を変更して見た目を更新する
     /// </summary>
     /// <param name="shouldClose">閉じるならtrue</param>
-    public void SetState(bool shouldClose)
+    public void SetState(bool shouldClose, bool playSound = true)
     {
         IsClosed = shouldClose;
 
@@ -47,12 +47,15 @@ public class Crossing : MonoBehaviour
             Debug.Log(gameObject.name + " が閉じました");
             // 子オブジェクトであるポールの角度と位置を変更
             poleObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
-            poleObject.transform.localPosition = new Vector3(1.3f, 0.0f, 0.0f);
+            poleObject.transform.localPosition = new Vector3(1.3f, -0.1f, 0.0f);
             // タグ変更
             tag = "Down";
 
             //オーディオ再生
+            if(playSound)
+            {
             sound.PlayOneShot(crossOpenSource);
+            }
         }
         else
         {
@@ -61,12 +64,17 @@ public class Crossing : MonoBehaviour
             Debug.Log(gameObject.name + " が開きました");
             // 子オブジェクトであるポールの角度と位置を変更
             poleObject.transform.localRotation = Quaternion.Euler(0, 0, 45);
-            poleObject.transform.localPosition = new Vector3(1.0f, 0.8f, 0.0f);
+            poleObject.transform.localPosition = new Vector3(0.9f, 1.0f, 0.0f);
+            // defaut 1.0, 0.8
+
             // タグ変更
             tag = "Up";
 
             //オーディオ再生
+            if(playSound)
+            {
             sound.PlayOneShot(crossClosedSource);
+            }
         }
     }
 }
