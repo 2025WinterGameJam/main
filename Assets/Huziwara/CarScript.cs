@@ -2,6 +2,7 @@ using Unity.Mathematics;
 using Unity.VisualScripting;
 using UnityEngine;
 
+[RequireComponent(typeof(Cinemachine.CinemachineImpulseSource))]
 public class CarMove : MonoBehaviour
 {
     bool stop;
@@ -38,6 +39,8 @@ public class CarMove : MonoBehaviour
         {
             //Sound.PlayOneShot(Train);
             TimerScript.instance.AddTime(-6.0f);
+            // 揺らす
+            GetComponent<Cinemachine.CinemachineImpulseSource>().GenerateImpulse();
             //GaugeMove.Gauge -= 100;
             Destroy(gameObject);
         }

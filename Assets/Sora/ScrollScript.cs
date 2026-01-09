@@ -1,4 +1,37 @@
 using UnityEngine;
+
+public class SpriteScroll : MonoBehaviour
+{
+	[SerializeField] private float scrollSpeedX = 0.1f;
+	[SerializeField] private float scrollSpeedY = 0.1f;
+
+	private Renderer _renderer;
+	private Vector2 _offset;
+
+	void Start()
+	{
+		_renderer = GetComponent<Renderer>();
+	}
+
+	void Update()
+	{
+		// オフセット値を計算
+		float x = Mathf.Repeat(Time.time * scrollSpeedX, 1);
+		float y = Mathf.Repeat(Time.time * scrollSpeedY, 1);
+		_offset = new Vector2(x, y);
+
+		// マテリアルのオフセットを変更
+		// 注意: materialへのアクセスはインスタンスを生成するため、大量のオブジェクトに行うとメモリ負荷がかかります
+		_renderer.material.mainTextureOffset = _offset;
+	}
+
+	// 終了時にマテリアルのインスタンス破棄などを考慮するのがベストプラクティスですが、
+	// 簡易的な利用であれば上記で動作します。
+}
+
+
+/*
+using UnityEngine;
 using UnityEngine.UI;
 
 public class BackgroundScroll : MonoBehaviour
@@ -50,3 +83,4 @@ public class BackgroundScroll : MonoBehaviour
 		Destroy(m_material);
 	}
 }
+*/

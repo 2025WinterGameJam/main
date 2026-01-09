@@ -22,7 +22,7 @@ public class Crossing : MonoBehaviour
 
         spriteRenderer = GetComponent<SpriteRenderer>();
         // 初期状態（開いている状態）をセット
-        SetState(false);
+        SetState(false, false);
     }
 
     // クリックされた時のUnityイベント
@@ -36,7 +36,7 @@ public class Crossing : MonoBehaviour
     /// 状態を変更して見た目を更新する
     /// </summary>
     /// <param name="shouldClose">閉じるならtrue</param>
-    public void SetState(bool shouldClose)
+    public void SetState(bool shouldClose, bool playSound = true)
     {
         IsClosed = shouldClose;
 
@@ -52,7 +52,10 @@ public class Crossing : MonoBehaviour
             tag = "Down";
 
             //オーディオ再生
+            if(playSound)
+            {
             sound.PlayOneShot(crossOpenSource);
+            }
         }
         else
         {
@@ -66,7 +69,10 @@ public class Crossing : MonoBehaviour
             tag = "Up";
 
             //オーディオ再生
+            if(playSound)
+            {
             sound.PlayOneShot(crossClosedSource);
+            }
         }
     }
 }

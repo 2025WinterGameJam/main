@@ -34,6 +34,9 @@ public class TimerScript : MonoBehaviour
 
         if(m_Time <= 0.0f)
         {
+            // 見た目悪くなるので0以下にならないようにする
+            m_Time = 0.0f;
+
             // 終了処理
             SceneManager.LoadScene("ResultScene");
         }
@@ -57,6 +60,11 @@ public class TimerScript : MonoBehaviour
     public float AddTime(float time)
     {
         m_Time += time;
+        // 見た目悪くなるので0以下にならないようにする
+        if(m_Time < 0.0f)
+        {
+            m_Time = 0.0f;
+        }
         return m_Time;
     }
 
