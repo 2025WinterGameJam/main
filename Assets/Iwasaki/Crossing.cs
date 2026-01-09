@@ -47,7 +47,7 @@ public class Crossing : MonoBehaviour
             Debug.Log(gameObject.name + " が閉じました");
             // 子オブジェクトであるポールの角度と位置を変更
             poleObject.transform.localRotation = Quaternion.Euler(0, 0, 0);
-            poleObject.transform.localPosition = new Vector3(1.3f, 0.0f, 0.0f);
+            poleObject.transform.localPosition = new Vector3(1.3f, -0.1f, 0.0f);
             // タグ変更
             tag = "Down";
 
@@ -64,7 +64,9 @@ public class Crossing : MonoBehaviour
             Debug.Log(gameObject.name + " が開きました");
             // 子オブジェクトであるポールの角度と位置を変更
             poleObject.transform.localRotation = Quaternion.Euler(0, 0, 45);
-            poleObject.transform.localPosition = new Vector3(1.0f, 0.8f, 0.0f);
+            poleObject.transform.localPosition = new Vector3(0.9f, 1.0f, 0.0f);
+            // defaut 1.0, 0.8
+
             // タグ変更
             tag = "Up";
 
