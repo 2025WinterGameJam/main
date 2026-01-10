@@ -173,7 +173,7 @@ GameObject:
   - component: {fileID: 2903720490564538153}
   - component: {fileID: -368458511118965550}
   m_Layer: 5
-  m_Name: bubble_0
+  m_Name: CrossingInfo
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -218,7 +218,7 @@ SpriteRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: 2100000, guid: a97c105638bdf8b4a8650670310a4cd3, type: 2}
+  - {fileID: 2100000, guid: 9dfc825aed78fcd4ba02077103263b40, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -236,8 +236,8 @@ SpriteRenderer:
   m_AutoUVMaxDistance: 0.5
   m_AutoUVMaxAngle: 89
   m_LightmapParameters: {fileID: 0}
-  m_SortingLayerID: -249158431
-  m_SortingLayer: 3
+  m_SortingLayerID: 1564365261
+  m_SortingLayer: 1
   m_SortingOrder: 0
   m_Sprite: {fileID: -9136834448258697486, guid: c15b56c877d8bb64f8c0e145a65fc359, type: 3}
   m_Color: {r: 1, g: 1, b: 1, a: 1}
@@ -262,3 +262,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 350399ff2fe544a45af330f94127684f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  m_InfoObject: {fileID: 0}

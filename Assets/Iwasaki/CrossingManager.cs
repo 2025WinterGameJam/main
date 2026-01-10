@@ -10,7 +10,7 @@ public class CrossingManager : MonoBehaviour
     private List<Crossing> closedCrossings = new List<Crossing>();
 
     // 同時に閉じられる最大数
-    private const int MaxClosedCount = 3;
+    public const int MaxClosedCount = 3;
 
     void Awake()
     {
@@ -39,17 +39,28 @@ public class CrossingManager : MonoBehaviour
     // 踏切を閉じる処理
     private void CloseCrossing(Crossing crossing)
     {
+        bool wasAllClose = false;
         // 既に3つ閉まっている場合
         if (closedCrossings.Count >= MaxClosedCount)
         {
             // リストの最初（一番古く閉じたもの）を取得して強制的に開く
             Crossing oldest = closedCrossings[0];
             OpenCrossing(oldest);
+            wasAllClose = true;
         }
 
         // 新しく閉じる踏切をリストの末尾に追加
         closedCrossings.Add(crossing);
         crossing.SetState(true); // 閉じる
+
+        // 今回追加したのは2回実行したことになってしまうが3つ閉まっていた時に他の部分の文字も更新しないといけないのでforeachで更新をかける
+        if(wasAllClose)
+        {
+            foreach(var c in closedCrossings)
+            {
+                c.GetComponent<CrossingInfoScript>().UpdateCrossingInfo(true, GetIndex(c));
+            }
+        }
 
         Debug.Log($"現在の閉鎖数: {closedCrossings.Count} / {MaxClosedCount}");
     }
@@ -63,6 +74,17 @@ public class CrossingManager : MonoBehaviour
             closedCrossings.Remove(crossing);
         }
 
+        // 開閉状況表示を更新
+        foreach (var c in closedCrossings)
+        {
+            c.GetComponent<CrossingInfoScript>().UpdateCrossingInfo(true, GetIndex(c));
+        }
+
         crossing.SetState(false); // 開く
+    }
+
+    public int GetIndex(Crossing crossing)
+    {
+        return closedCrossings.IndexOf(crossing) + 1;
     }
 }
