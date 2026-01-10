@@ -1,6 +1,4 @@
 using UnityEngine;
-using UnityEngine.UI;
-using UnityEngine.EventSystems;
 using UnityEngine.Networking;
 
 public class ShareXScript : MonoBehaviour
@@ -21,13 +19,13 @@ public class ShareXScript : MonoBehaviour
         Application.OpenURL(url);
     }
 
-    public void OnPointerEnter(PointerEventData eventData)
+    public void Hover()
     {
         // ホバーしたら説明表示
         m_HoverObject.SetActive(true);
     }
 
-    public void OnPointerExit(PointerEventData eventData)
+    public void HoverExit()
     {
         // ホバー外れたら説明非表示
         m_HoverObject.SetActive(false);
