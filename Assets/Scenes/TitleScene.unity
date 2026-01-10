@@ -823,7 +823,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'Ver: 1.1.0'
+  m_text: 'Ver: 1.2.0'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: a3f3adf11b8945d4ca156756b9afdd01, type: 2}
   m_sharedMaterial: {fileID: 2616635522232699204, guid: a3f3adf11b8945d4ca156756b9afdd01, type: 2}
@@ -1369,9 +1369,9 @@ Camera:
   m_LensShift: {x: 0, y: 0}
   m_NormalizedViewPortRect:
     serializedVersion: 2
-    x: 0.00018060207
+    x: 0.00016355515
     y: 0
-    width: 0.9996388
+    width: 0.9996729
     height: 1
   near clip plane: 0.3
   far clip plane: 1000

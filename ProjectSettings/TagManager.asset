@@ -8,6 +8,7 @@ TagManager:
   - Down
   - Factory
   - Train
+  - Car
   layers:
   - Default
   - TransparentFX
@@ -45,11 +46,17 @@ TagManager:
   - name: Default
     uniqueID: 0
     locked: 0
+  - name: Crossing
+    uniqueID: 1564365261
+    locked: 0
   - name: TitleImage
     uniqueID: 505759977
     locked: 0
   - name: Panel
     uniqueID: 3072781287
+    locked: 0
+  - name: UI
+    uniqueID: 4045808865
     locked: 0
   m_RenderingLayers:
   - Default

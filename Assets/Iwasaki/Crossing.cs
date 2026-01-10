@@ -1,5 +1,6 @@
 using UnityEngine;
 
+[RequireComponent(typeof(CrossingInfoScript))]
 public class Crossing : MonoBehaviour
 {
     [Header("画像の割当て")]
@@ -51,6 +52,10 @@ public class Crossing : MonoBehaviour
             // タグ変更
             tag = "Down";
 
+            // 情報を表示
+            GetComponent<CrossingInfoScript>().UpdateCrossingInfo(true, CrossingManager.Instance.GetIndex(this));
+            // 最大数締め切ってて再度閉めようとした時に文章の再更新走らせないとどこが次に開くかがわからない欠点ががが
+
             //オーディオ再生
             if(playSound)
             {
@@ -69,6 +74,9 @@ public class Crossing : MonoBehaviour
 
             // タグ変更
             tag = "Up";
+
+            // 情報を非表示
+            GetComponent<CrossingInfoScript>().UpdateCrossingInfo(false, 0);
 
             //オーディオ再生
             if(playSound)

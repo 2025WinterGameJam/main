@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8929944402950590081}
   - component: {fileID: 5940522137658685479}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 8514119162948125292}
   - component: {fileID: 1505661637879133337}
   - component: {fileID: 5774542113666834131}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Train
   m_TagString: Train
   m_Icon: {fileID: 0}
@@ -241,7 +241,7 @@ BoxCollider2D:
   m_UsedByEffector: 0
   m_CompositeOperation: 0
   m_CompositeOrder: 0
-  m_Offset: {x: -1.8164663, y: -0.07630633}
+  m_Offset: {x: -1.852192, y: -0.07630634}
   m_SpriteTilingProperty:
     border: {x: 0, y: 0, z: 0, w: 0}
     pivot: {x: 0.5, y: 0.5}
@@ -251,7 +251,7 @@ BoxCollider2D:
     drawMode: 0
     adaptiveTiling: 0
   m_AutoTiling: 0
-  m_Size: {x: 7.5195255, y: 1.0585458}
+  m_Size: {x: 7.305176, y: 1.0585458}
   m_EdgeRadius: 0
 --- !u!82 &5774542113666834131
 AudioSource:
@@ -266,7 +266,7 @@ AudioSource:
   m_audioClip: {fileID: 0}
   m_Resource: {fileID: 0}
   m_PlayOnAwake: 0
-  m_Volume: 1
+  m_Volume: 0.95
   m_Pitch: 1
   Loop: 0
   Mute: 0
