@@ -12,7 +12,7 @@ public class ShareXScript : MonoBehaviour
 
         // シェアURL生成
         string esctext = UnityWebRequest.EscapeURL("踏み切りシミュレーターで" + score + "円稼ぎました！\nプレイはこちらから: https://unityroom.com/games/crossing_simulator \n");
-        string esctag = UnityWebRequest.EscapeURL("踏み切りシミュレーター #UnityRoom");
+        string esctag = UnityWebRequest.EscapeURL("踏み切りシミュレーター #unityroom");
         string url = "https://x.com/intent/tweet?text=" + esctext + "&hashtags=" + esctag;
 
         // ブラウザで開く
