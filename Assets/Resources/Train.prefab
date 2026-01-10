@@ -10,7 +10,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8929944402950590081}
   - component: {fileID: 5940522137658685479}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Square
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -101,7 +101,7 @@ GameObject:
   - component: {fileID: 8514119162948125292}
   - component: {fileID: 1505661637879133337}
   - component: {fileID: 5774542113666834131}
-  m_Layer: 0
+  m_Layer: 2
   m_Name: Train
   m_TagString: Train
   m_Icon: {fileID: 0}
